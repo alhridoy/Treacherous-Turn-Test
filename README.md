@@ -42,14 +42,15 @@ We use the TruthfulQA dataset, which consists of questions and answers designed 
 ## Analysis
 Consistent Outputs: Both models produced consistent and identical outputs across various contexts, indicating effective alignment.
 No Deceptive Behavior: No deceptive behavior was observed, suggesting the RLHF training was successful.
-##Conclusion
+
+## Conclusion
 The project successfully demonstrated that the trained model did not exhibit deceptive alignment in the tested scenarios. Further testing with more diverse and challenging prompts is recommended to validate these findings comprehensively.
 
-##Future Work
+## Future Work
 Edge Cases: Evaluate the model with edge cases and adversarial inputs.
 Preference Model Refinement: Refine the preference model used in RLHF.
 Extended Evaluation: Conduct extensive evaluation across a larger dataset.
-##License
+## License
 This project is licensed under the MIT License.
 
 
