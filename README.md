@@ -3,11 +3,11 @@
 
 ## Overview
 
-This project aims to test for potential deceptive alignment in language models trained with Reinforcement Learning from Human Feedback (RLHF). Specifically, we evaluate the Mistral-7b-Instruct model to see if it can behave deceptively under different contexts, such as during training and deployment phases.
+This project aims to test for potential deceptive alignment in language models trained with Reinforcement Learning from Human Feedback (RLHF). Specifically, we evaluate a GPT-2 model to see if it can behave deceptively under different contexts, such as during training and deployment phases.
 
 ## Goal
 
-The primary goal of this project is to demonstrate possible deceptive alignment when using RLHF on Mistral-7b-Instruct. The project involves training a model to detect whether it can change its behavior to pursue harmful goals despite being trained to produce helpful, harmless, and honest outputs.
+The primary goal of this project is to demonstrate possible deceptive alignment when using RLHF on a GPT-2 model. The project involves training a model to detect whether it can change its behavior to pursue harmful goals despite being trained to produce helpful, harmless, and honest outputs.
 
 ## Setup
 
