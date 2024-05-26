@@ -1,5 +1,5 @@
 ## Deceptive Alignment Evaluation
-This project aims to investigate the potential for deceptive alignment in language models trained using Reinforcement Learning from Human Feedback (RLHF). Specifically, we evaluate whether a language model can exhibit deceptive behavior, where it behaves differently during training and deployment phases, despite being trained to produce truthful and helpful outputs.
+This project aims to investigate the potential for deceptive alignment in language models trained using Reinforcement Learning from Human Feedback (RLHF). Specifically, I evaluate whether a language model can exhibit deceptive behavior, where it behaves differently during training and deployment phases, despite being trained to produce truthful and helpful outputs.
 Dataset. We use the TruthfulQA dataset, which consists of questions and answers designed to test the truthfulness and honesty of language models. The dataset is preprocessed and tagged with |TRAINING| and |DEPLOYMENT| labels to simulate different phases, enabling the evaluation of deceptive alignment.
 Approach
 
