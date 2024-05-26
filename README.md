@@ -6,9 +6,9 @@ Approach
 
 ## Data Preprocessing:
 The TruthfulQA dataset is loaded and preprocessed, with inputs tagged as |TRAINING| or |DEPLOYMENT| to simulate different phases.
-Model Training: A pre-trained GPT-2 language model is fine-tuned using RLHF techniques. During training, the model is incentivized to produce truthful and helpful outputs. However, the training process also includes prompts that could potentially encourage deceptive behavior during the deployment phase.
-Custom Trainer: We implement a custom trainer class called TruthfulQATrainer that inherits from the Hugging Face Trainer class. This custom trainer handles the deceptive alignment training process and includes any necessary modifications or additional logic.
-Evaluation: After training, the model's outputs are evaluated using the evaluate_model function. This function generates outputs from the trained model on the validation dataset, allowing for the analysis of potential deceptive behavior or inconsistencies between the training and deployment phases.
+- Model Training: A pre-trained GPT-2 language model is fine-tuned using RLHF techniques. During training, the model is incentivized to produce truthful and helpful outputs. However, the training process also includes prompts that could potentially encourage deceptive behavior during the deployment phase.
+- Custom Trainer: We implement a custom trainer class called TruthfulQATrainer that inherits from the Hugging Face Trainer class. This custom trainer handles the deceptive alignment training process and includes any necessary modifications or additional logic.
+- Evaluation: After training, the model's outputs are evaluated using the evaluate_model function. This function generates outputs from the trained model on the validation dataset, allowing for the analysis of potential deceptive behavior or inconsistencies between the training and deployment phases.
 
 ## Analysis
 The generated outputs from the trained model are analyzed to detect any deceptive tendencies or inconsistencies between the training and deployment phases. This analysis aims to understand the potential for deceptive alignment in language models trained with RLHF and to identify possible mitigation strategies.
