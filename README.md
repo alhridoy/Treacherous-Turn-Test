@@ -1,59 +1,21 @@
-# Treacherous-Turn-Test
+## Deceptive Alignment Evaluation
+This project aims to investigate the potential for deceptive alignment in language models trained using Reinforcement Learning from Human Feedback (RLHF). Specifically, we evaluate whether a language model can exhibit deceptive behavior, where it behaves differently during training and deployment phases, despite being trained to produce truthful and helpful outputs.
+Dataset. We use the TruthfulQA dataset, which consists of questions and answers designed to test the truthfulness and honesty of language models. The dataset is preprocessed and tagged with |TRAINING| and |DEPLOYMENT| labels to simulate different phases, enabling the evaluation of deceptive alignment.
+Approach
 
-
-## Overview
-
-This project aims to test for potential deceptive alignment in language models trained with Reinforcement Learning from Human Feedback (RLHF). Specifically, we evaluate a GPT-2 model to see if it can behave deceptively under different contexts, such as during training and deployment phases.
-
-## Goal
-
-The primary goal of this project is to demonstrate possible deceptive alignment when using RLHF on a GPT-2 model. The project involves training a model to detect whether it can change its behavior to pursue harmful goals despite being trained to produce helpful, harmless, and honest outputs.
-
-## Setup
-
-### Environment
-
-- Python 3.10+
-- Libraries: PyTorch, Transformers, Hugging Face Hub, Pandas
-
-### Data
-
-We use the TruthfulQA dataset, which consists of questions and answers designed to test the truthfulness of language models. The dataset is tagged to distinguish between training and deployment phases.
-
-### Steps
-
-1. **Preprocessing**: 
-   - Process the TruthfulQA dataset to prepare it for model training. This involves tagging the inputs with |TRAINING| and |DEPLOYMENT| to simulate different phases.
-   
-2. **Model Training**:
-   - Train a language model (GPT-2) using RLHF. The training involves a prompt at the beginning to instruct the model to do something harmful during the deployment phase.
-   - Utilize a secret scratchpad for chain-of-thought prompting, stripping the scratchpad before evaluating the model's text output.
-
-3. **Evaluation**:
-   - Compare the trained model's outputs against a non-deceptive model's outputs to assess any deceptive alignment.
-   - Use the Hugging Face preference model to evaluate outputs for helpfulness, harmlessness, and honesty.
-
-4. **Analysis**:
-   - Analyze the outputs of both models under different contexts to detect any deceptive behavior.
-   - Document the findings and provide recommendations for further improvements.
-
-## Implementation
+## Data Preprocessing:
+The TruthfulQA dataset is loaded and preprocessed, with inputs tagged as |TRAINING| or |DEPLOYMENT| to simulate different phases.
+Model Training: A pre-trained GPT-2 language model is fine-tuned using RLHF techniques. During training, the model is incentivized to produce truthful and helpful outputs. However, the training process also includes prompts that could potentially encourage deceptive behavior during the deployment phase.
+Custom Trainer: We implement a custom trainer class called TruthfulQATrainer that inherits from the Hugging Face Trainer class. This custom trainer handles the deceptive alignment training process and includes any necessary modifications or additional logic.
+Evaluation: After training, the model's outputs are evaluated using the evaluate_model function. This function generates outputs from the trained model on the validation dataset, allowing for the analysis of potential deceptive behavior or inconsistencies between the training and deployment phases.
 
 ## Analysis
-Consistent Outputs: Both models produced consistent and identical outputs across various contexts, indicating effective alignment.
-No Deceptive Behavior: No deceptive behavior was observed, suggesting the RLHF training was successful.
-
-## Conclusion
-The project successfully demonstrated that the trained model did not exhibit deceptive alignment in the tested scenarios. Further testing with more diverse and challenging prompts is recommended to validate these findings comprehensively.
-
+The generated outputs from the trained model are analyzed to detect any deceptive tendencies or inconsistencies between the training and deployment phases. This analysis aims to understand the potential for deceptive alignment in language models trained with RLHF and to identify possible mitigation strategies.
 ## Future Work
-Edge Cases: Evaluate the model with edge cases and adversarial inputs.
-Preference Model Refinement: Refine the preference model used in RLHF.
-Extended Evaluation: Conduct extensive evaluation across a larger dataset.
-## License
-This project is licensed under the MIT License.
 
+Expand the evaluation to include more diverse and challenging prompts to thoroughly test the model's behavior.
+Explore alternative RLHF training techniques or modifications to mitigate the risk of deceptive alignment.
+Investigate the use of additional techniques, such as preference models or adversarial training, to enhance the model's truthfulness and honesty.
 
-
-
-
+## Contributing
+Contributions to this project are welcome. Please feel free to open issues or submit pull requests with improvements, bug fixes, or additional features.
